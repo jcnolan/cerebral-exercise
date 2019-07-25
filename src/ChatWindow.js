@@ -26,7 +26,7 @@ class ChatWindow extends Component {
 
             <div className="chat-window">
                 <ChatHeader />
-                <ChatReadout linesIn={this.state.lines}/>
+                <ChatReadout linesIn={this.state.lines} questionData={this.props.questionData}/>
                 <ChatFooter handleSubmit={this.handleSubmit} />
             </div>
         )

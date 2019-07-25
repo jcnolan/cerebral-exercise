@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
-import './App.css';
-import './css/chatSample.css';
-import ChatWindow from './ChatWindow'
+import React, { Component } from 'react'
 
-import Api from './Api'
-
-class App extends Component {
-
-  state = {
-    characters: [],
-    data: [],
-    dataA: [],
-  }
+class Api extends Component {
+    state = {
+        data: [],
+        dataA: [],
+    }
 
     // Code is invoked after the component is mounted/inserted into the DOM tree.
     componentDidMount() {
@@ -41,38 +34,19 @@ class App extends Component {
             })
     }
 
-    /*
-      removeCharacter = index => {
+    render() {
+/*
+        const { data } = this.state
 
-        const {characters} = this.state
-
-        this.setState({
-          characters: characters.filter((character,i)=>{
-            return i !== index
-          }),
+        const result = data.map((entry, index) => {
+            return <li key={index}>{entry}</li>
         })
-      }
+        return (<div><pre>{JSON.stringify(data, null, 2) }</pre></div>)
+*/
+        return (<div>&nbsp;</div>); // todo - designed as stub to allow for more complex API use - perhaps should not be a class / render at all?
 
-
-      handleSubmit = character => {
-        this.setState({characters: [...this.state.characters,character]})
-      }
-    */
-
-  render() {
-
-      const {characters} = this.state
-      const {dataA}      = this.state
-
-      return (
-          <div className="container">
-            <div className="chat-container">
-              <ChatWindow characterData={characters} questionData={dataA}/>
-            </div>
-          </div>
-      )
-  }
+    }
 
 }
 
-export default App;
+export default Api
