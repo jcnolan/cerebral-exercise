@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './css/chatSample.css';
-import csrImage from './images/live-support-csr.png';
 
-import Form from './Form'
-import Readout from "./Readout";
+import ChatReadout from "./ChatReadout";
+import ChatHeader  from "./ChatHeader";
+import ChatFooter  from "./ChatFooter";
 
 class ChatWindow extends Component {
 
@@ -25,20 +25,9 @@ class ChatWindow extends Component {
         return (
 
             <div className="chat-window">
-                <div className="chat-header">
-
-                    <img src={csrImage} alt="" height="40" width="40" />
-                    <span>Marianne Singer</span>
-
-                </div>
-
-                <div className="chat-readout">
-                    <Readout linesIn={this.state.lines}/>
-                </div>
-
-                <div className="chat-footer">
-                    <Form handleSubmit={this.handleSubmit}/>
-                </div>
+                <ChatHeader />
+                <ChatReadout linesIn={this.state.lines}/>
+                <ChatFooter handleSubmit={this.handleSubmit} />
             </div>
         )
     }
