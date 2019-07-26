@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import './css/chatSample.css';
 import ChatForm from './ChatForm'
 
 class ChatFooter extends Component {
 
-    // Note: this is just a placeholder class for possible extension - so scope is a tad wonky - todo
+    // Note: this is just a placeholder class for possible extension
 
     render() {
 

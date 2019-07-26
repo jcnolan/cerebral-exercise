@@ -1,6 +1,9 @@
 import React, {Component} from "react"
 
 class ChatForm extends Component {
+    
+    // todo - this got a little messy in development and could probably use a little refactoring
+    // todo - enhance to allow for error message to be passed in as alternative to "No soup for you!!!" ideally based on expected responses
 
     constructor(props) {
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import './css/chatSample.css';
 import csrImage from './images/live-support-csr.png'
 
 class ChatHeader extends Component {
 
+    // Note: this is just a placeholder class for possible extension - ideally will support multiple CSRs and not be hard-coded
+    
     render() {
 
         return (

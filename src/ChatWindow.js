@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './css/chatSample.css';
 
 import ChatReadout from "./ChatReadout";
 import ChatHeader  from "./ChatHeader";
@@ -8,17 +7,12 @@ import ChatFooter  from "./ChatFooter";
 class ChatWindow extends Component {
 
     state = {
-        responseData: [],
-        questionNum:  1,
-        isValid:      true,
+        responseData:   [],
+        questionNum:    1,
+        isValid:        true,
         activeQuestion: null,
     }
 
-/*
-    constructor(props) {
-        super(props)
-    }
-*/
     handleSubmit = textIn => {
 
         const responseData = this.state.responseData
