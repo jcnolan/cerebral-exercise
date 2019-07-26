@@ -8,6 +8,9 @@ class ChatForm extends Component {
     constructor(props) {
 
         super(props)
+
+        // General initialization
+
         const promptText = 'Type here...'
 
         this.initialState = {
@@ -15,9 +18,21 @@ class ChatForm extends Component {
             textIn: promptText,
         }
         this.state = this.initialState
+
+        // Code to catch return on enter and submit
+
+        this.handleKeyPress = this.handleKeyPress.bind(this);
+    }
+
+    handleKeyPress(e) {
+        if (e.keyCode == 13) {
+            this.submitForm()
+            e.preventDefault();
+        }
     }
 
     handleChange = event => {
+
         const inputName = event.target.value
         this.setState({
             textIn: inputName
@@ -52,13 +67,14 @@ class ChatForm extends Component {
         return(
             <form>
 
-                <input className="chat-footer-input"
-                       type="text"
-                       name="textIn"
-                       autoComplete="off"
-                       value   = {this.getPrompt()}
-                       onClick = {this.handleClick}
-                       onChange= {this.handleChange}
+                <input className    = "chat-footer-input"
+                       type         = "text"
+                       name         = "textIn"
+                       autoComplete = "off"
+                       value        = {this.getPrompt()}
+                       onClick      = {this.handleClick}
+                       onChange     = {this.handleChange}
+                       onKeyDown    = {this.handleKeyPress}
                 />
 
                 <input type="button" className="chat-button" value="Submit" onClick={this.submitForm}/>
