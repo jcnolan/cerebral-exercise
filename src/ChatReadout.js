@@ -2,9 +2,9 @@ import React, {Component} from "react"
 import './css/chatSample.css';
 //import renderHTML from 'react-render-html';
 
-const ReadoutBodyTemp = props => {
+const DumpResponses = props => {
 
-    const rows = props.lineData.map((row, index) => {
+    const rows = props.responseData.map((row, index) => {
         return (
             <tr key={index}>
                 <td>{index}</td>
@@ -20,7 +20,7 @@ const ReadoutBodyTemp = props => {
 
 class ChatReadout extends Component {
 
-    /*
+/*
     constructor(props) {
 
         super(props)
@@ -37,9 +37,10 @@ class ChatReadout extends Component {
         return (<pre>{outStr}</pre>)
     }
 */
+
     getQuestionText = (idx) => {
         const myQuestionJSON = this.props.questionData[idx]
-        const myQuestionText = (myQuestionJSON === undefined) ? 'Loading...' : myQuestionJSON.question
+        const myQuestionText = (myQuestionJSON === undefined) ? 'Loading...' : "(" + myQuestionJSON.id + ") " + myQuestionJSON.question
         return myQuestionText
     }
 
@@ -49,11 +50,11 @@ class ChatReadout extends Component {
                 <div className="chat-scroll-readout">
 
                     <div className="chat-name-user">You:</div>
-                    <div className="chat-text">Hi there my name is Jhon</div>
+                    <div className="chat-text">Hi there my name is John</div>
                     <div className="chat-text-spacer"></div>
 
                     <div className="chat-name-csr">Marianne:</div>
-                    <div className="chat-text">Hi Jhon, how can I help you?</div>
+                    <div className="chat-text">Hi John, how can I help you?</div>
                     <div className="chat-text-spacer"></div>
 
                     <div className="chat-name-user">You:</div>
@@ -65,25 +66,43 @@ class ChatReadout extends Component {
         )
     }
 
-    render() {
+    chatTranscript = (responseData, questionData) => {
+
+        var questionNum = this.props.questionNum
 
         const csrName = "Marianne"
-        const idx = 8
+        const myQuestionText = this.getQuestionText(questionNum)
 
-        if (this.props.linesIn.length > 0)
+        return (
+            <div className="chat-scroll-readout">
+
+                <div className="chat-name-csr">{csrName}:</div>
+                <div className="chat-text">{myQuestionText}</div>
+                <div className="chat-text-spacer"></div>
+
+            </div>
+        )
+    }
+
+    render() {
+
+        const {questionNum} = this.props
+        const csrName = "Marianne"
+        const myQuestionText = this.getQuestionText(questionNum)
+
+
+        if (this.props.responseData.length > 0 && false)
         {
             return (
                 <div className="chat-readout">
                     <div className="chat-scroll-readout">
-                        <ReadoutBodyTemp lineData={this.props.linesIn}/>
+                        <DumpResponses lineData={this.props.linesIn}/>
                     </div>
                 </div>
             )
 
         } else {
 
-            const myQuestionJSON = this.props.questionData[idx]
-            const myQuestionText = this.getQuestionText(idx)
 
             if (true) { // todo - This is a hard-code binary path - remove before prod release
 

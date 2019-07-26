@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="884">
+              <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatWindow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="187">
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChatReadout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1221">
-              <caret line="87" column="20" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="20" />
+            <state relative-caret-position="512">
+              <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -117,6 +117,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>name</find>
+      <find>ReadoutBodyTemp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,9 +140,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="631" />
+    <option name="x" value="291" />
     <option name="y" value="27" />
-    <option name="width" value="1610" />
+    <option name="width" value="1950" />
     <option name="height" value="1350" />
   </component>
   <component name="ProjectView">
@@ -221,23 +222,23 @@
       <option name="presentableId" value="Default" />
       <updated>1564015808737</updated>
       <workItem from="1564015810145" duration="18535000" />
-      <workItem from="1564081931718" duration="11603000" />
+      <workItem from="1564081931718" duration="15964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30138000" />
+    <option name="totallyTimeSpent" value="34499000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="631" y="27" width="1610" height="1350" extended-state="0" />
+    <frame x="291" y="27" width="1950" height="1350" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23390275" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19119227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928944" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -247,7 +248,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.12218371" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.12218371" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -321,16 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatFooter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -341,10 +332,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatWindow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="187">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -353,8 +354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatReadout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="20" />
+        <state relative-caret-position="512">
+          <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

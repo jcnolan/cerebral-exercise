@@ -8,19 +8,19 @@ import Api from './Api'
 class App extends Component {
 
   state = {
-    characters: [],
-    data: [],
-    dataA: [],
+//    characters: [],
+      data: [], // todo - this one's not needed (I think... or if we do filter we use this one instead)
+      dataA: [],
   }
 
     // Code is invoked after the component is mounted/inserted into the DOM tree.
     componentDidMount() {
 
-        //   const url  = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*'
-        const url2 = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=Beatles&format=json&origin=*'
-        const url3 = 'http://jcnolan.com/samples/cerebral/dummyApi.php'
+      // todo - Loads JSON Data, realatively dumb stub put in place for quick development
 
-        fetch(url3)
+        const url = 'http://jcnolan.com/samples/cerebral/dummyApi.php'
+
+        fetch(url)
             .then(result => result.json())
             .then(result => {
                 this.setState({
@@ -53,7 +53,6 @@ class App extends Component {
         })
       }
 
-
       handleSubmit = character => {
         this.setState({characters: [...this.state.characters,character]})
       }
@@ -61,8 +60,9 @@ class App extends Component {
 
   render() {
 
-      const {characters} = this.state
-      const {dataA}      = this.state
+      const {characters}  = this.state
+      const {dataA}       = this.state
+      const {questionNum} = this.state
 
       return (
           <div className="container">
