@@ -9,11 +9,9 @@ class ChatWindow extends Component {
 
     state = {
         responseData: [],
-        questionNum:  1,
+        questionNum:  7,
         isValid:      true,
         activeQuestion: null,
-        v: null,
-        t: '',
     }
 
 /*
@@ -30,45 +28,77 @@ class ChatWindow extends Component {
 
         // Validate Here
 
-        const questionJSON = this.props.questionData[questionNum]
-        const validateData = questionJSON.validation
+        const questionJSON  = this.props.questionData[questionNum]
+        const validateData  = questionJSON.validation
+        const validatePaths = questionJSON.paths
 
         this.setState({activeQuestion:questionJSON})
-        this.setState({v:validateData}); // todo - remove 'v' from state
 
         var typeType = ''
 
+        var nextQuestionNum = this.state.questionNum
+
         switch (typeof validateData) {
+
             case 'string':
-                typeType = "string"; break;
 
-                case 'object':
+                typeType = "string";
+                // regex
+
+                isValid = textIn.match(validateData) !== null
+                if (isValid) {
+                    nextQuestionNum = validatePaths
+                }
+                break;
+
+            case 'object':
+
+                // array of string options
+
                 typeType = "array";
+                isValid = validateData.includes(textIn.toLowerCase())
 
-                isValid = validateData.includes(textIn)
+                if (isValid) {
+                    nextQuestionNum = (typeof validatePaths === 'object') ? validatePaths[textIn.toLowerCase()] : validatePaths
+                }
 
                 break;
 
             case 'boolean':
-                typeType = "bool"; break;
-            default:
-                typeType = "other";
-        }
 
-        this.setState({t:typeType}); // todo - remove 'v' from state
+                // true = valid, false = stop asking
+
+                typeType = "bool";
+                isValid = validateData
+                nextQuestionNum = isValid ? validatePaths : -1;
+                break;
+
+            default:
+                typeType = "other";  // Should never happen!
+        }
 
         // On success save it
 
         if (isValid === true) {
+
+            // todo - odd hack mapping -1 into 0, would be better w/a flag or data structure change
+
+            if (nextQuestionNum === -1) {nextQuestionNum=0}
+
+            // Save new response in responseData
 
             responseData[this.state.questionNum] = textIn
             this.setState({responseData: responseData})
 
             // todo - save to server side here
 
+            {
+                // No code yet for saving to server
+            }
+
             // Set new question number
 
-            this.setState({questionNum: this.state.questionNum + 1})
+            this.setState({questionNum: nextQuestionNum})
 
         } else {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './css/chatSample.css';
-import Form from './Form'
+import ChatForm from './ChatForm'
 
 class ChatFooter extends Component {
 
@@ -10,7 +10,7 @@ class ChatFooter extends Component {
 
         return (
             <div className="chat-footer">
-                <Form handleSubmit={this.props.handleSubmit} isValid={this.props.isValid}/>
+                <ChatForm handleSubmit={this.props.handleSubmit} isValid={this.props.isValid}/>
             </div>
         )
     }

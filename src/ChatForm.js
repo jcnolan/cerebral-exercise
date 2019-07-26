@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-class Form extends Component {
+class ChatForm extends Component {
 
     constructor(props) {
 
@@ -64,4 +64,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default ChatForm;
