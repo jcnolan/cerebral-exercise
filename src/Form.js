@@ -23,16 +23,7 @@ class Form extends Component {
 
     handleClick = event => {
 
-//        if (event.target.value === this.initialState.textIn) {
-
-        const prom = this.getPrompt()
-        const val  = event.target.value
-
-    //   alert(prom+","+val)
-    //    alert (prom === val)
-     //   alert(this.initialState.textIn)
-
-        if (prom === val) {
+        if (this.getPrompt() === event.target.value) {
 
             this.setState({ textIn: "", isActive: true })
         }
