@@ -42,7 +42,7 @@ class ChatReadout extends Component {
 
     getQuestionText = (idx) => {
         const myQuestionJSON = this.props.questionData[idx]
-        const myQuestionText = (myQuestionJSON === undefined) ? 'Loading...' : "(" + myQuestionJSON.id + ") " + myQuestionJSON.question
+        const myQuestionText = (myQuestionJSON === undefined) ? 'Loading...' : myQuestionJSON.question + " (" + myQuestionJSON.id + ")"
         return myQuestionText
     }
 
@@ -99,7 +99,7 @@ class ChatReadout extends Component {
 
         } else {
 
-            if (true) {
+            if (true) { // todo - This is a hard-code binary path - remove before prod release
 
                 const chatTranscript = (responseData, questionData, questionNum) => {
 
@@ -113,18 +113,58 @@ class ChatReadout extends Component {
                         )
                     }
 
-                    if (false) {
+                    if (true) {
 
                         // For each response...
                             // Print associated question
                             // Print associated response
 
+                        const rows = responseData.map((row, index) => {
+
+                            const csrName  = 'Marianne'
+                            const userName = 'You'
+                            const myQuestionText = this.getQuestionText(index)
+                            const myResponseText = row
+
+                            return (
+                                <div>
+                                    <div className="chat-name-csr">{csrName}:</div>
+                                    <div className="chat-text">{myQuestionText}</div>
+                                    <div className="chat-text-spacer" />
+                                    <div className="chat-name-user">{userName}:</div>
+                                    <div className="chat-text">{myResponseText}</div>
+                                    <div className="chat-text-spacer" />
+                                </div>
+                            )
+                        })
+
+                        const csrName  = 'Marianne'
+                        const myQuestionText = this.getQuestionText(this.props.questionNum)
+
+                        const prompt = () => {
+
+                            return (
+                                <div>
+                                    <div className="chat-name-csr">{csrName}:</div>
+                                    <div className="chat-text">{myQuestionText}</div>
+                                    <div className="chat-text-spacer" />
+                                </div>
+                            )
+                        }
+
                         // For last response...
-                            // determine path from response...
-                            // Prompt questionnum from path
+                        // determine path from response...
+                        // Prompt questionnum from path
+
+                        return (
+                            <div className="chat-scroll-readout">
+                                {rows}
+                                {prompt()}
+                            </div>
+                        )
 
                     } else {
-                        
+
                         const csrName = "Marianne"
                         const myQuestionText = this.getQuestionText(questionNum)
 
@@ -142,7 +182,7 @@ class ChatReadout extends Component {
                     </div>
                 )
 
-            } else if (true) { // todo - This is a hard-code binary path - remove before prod release
+            } else if (true) {
 
                 const {questionNum} = this.props
                 const csrName = "Marianne"
