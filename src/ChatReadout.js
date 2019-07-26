@@ -40,8 +40,17 @@ class ChatReadout extends Component {
     }
 */
 
+    scrollToBottom = () => {
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
+
     componentDidMount() {
-      // todo - add code here to scroll div to the bottom
+        // todo - add code here to scroll div to the bottom
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
 
     getQuestionText = (idx) => {
@@ -67,6 +76,9 @@ class ChatReadout extends Component {
                     <div className="chat-text">Well, I need some information</div>
                     <div className="chat-text-spacer"></div>
 
+                    <div style={{ float:"left", clear: "both" }}
+                         ref={(el) => { this.messagesEnd = el; }}>
+                    </div>
                 </div>
             </div>
         )
@@ -113,6 +125,10 @@ class ChatReadout extends Component {
                                 <div className="chat-name-csr">{csrName}:</div>
                                 <div className="chat-text">{myQuestionText}</div>
                                 <div className="chat-text-spacer"></div>
+
+                                <div style={{ float:"left", clear: "both" }}
+                                     ref={(el) => { this.messagesEnd = el; }}>
+                                </div>
                             </div>
                         )
                     }
@@ -164,6 +180,9 @@ class ChatReadout extends Component {
                             <div className="chat-scroll-readout">
                                 {rows}
                                 {prompt()}
+                                <div style={{ float:"left", clear: "both" }}
+                                     ref={(el) => { this.messagesEnd = el; }}>
+                                </div>
                             </div>
                         )
 
@@ -175,6 +194,9 @@ class ChatReadout extends Component {
                         return (
                             <div className="chat-scroll-readout">
                                 {generateResponse(csrName, myQuestionText)}
+                                <div style={{ float:"left", clear: "both" }}
+                                     ref={(el) => { this.messagesEnd = el; }}>
+                                </div>
                             </div>
                         )
                     }
@@ -199,6 +221,9 @@ class ChatReadout extends Component {
                             <div className="chat-name-csr">{csrName}:</div>
                             <div className="chat-text">{myQuestionText}</div>
                             <div className="chat-text-spacer"></div>
+                            <div style={{ float:"left", clear: "both" }}
+                                 ref={(el) => { this.messagesEnd = el; }}>
+                            </div>
 
                         </div>
                     </div>

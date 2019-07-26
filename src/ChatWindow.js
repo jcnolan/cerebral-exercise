@@ -9,7 +9,7 @@ class ChatWindow extends Component {
 
     state = {
         responseData: [],
-        questionNum:  7,
+        questionNum:  1,
         isValid:      true,
         activeQuestion: null,
     }

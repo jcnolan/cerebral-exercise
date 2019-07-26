@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatWindow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="61" column="127" selection-start-line="61" selection-start-column="127" selection-end-line="61" selection-end-column="127" />
+            <state relative-caret-position="-644">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChatReadout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="410">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -121,6 +121,7 @@
       <find>getQuestionText</find>
       <find>textIn</find>
       <find>setState</find>
+      <find>chat-scroll-readout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,11 +136,11 @@
         <option value="$PROJECT_DIR$/src/Readout.js" />
         <option value="$PROJECT_DIR$/src/Api.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/ChatReadout.js" />
         <option value="$PROJECT_DIR$/src/ChatFooter.js" />
         <option value="$PROJECT_DIR$/src/Form.js" />
         <option value="$PROJECT_DIR$/src/ChatForm.js" />
         <option value="$PROJECT_DIR$/src/ChatWindow.js" />
+        <option value="$PROJECT_DIR$/src/ChatReadout.js" />
       </list>
     </option>
   </component>
@@ -227,12 +228,12 @@
       <updated>1564015808737</updated>
       <workItem from="1564015810145" duration="18535000" />
       <workItem from="1564081931718" duration="16229000" />
-      <workItem from="1564149231888" duration="9850000" />
+      <workItem from="1564149231888" duration="13369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49264000" />
+    <option name="totallyTimeSpent" value="52783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="291" y="27" width="1950" height="1350" extended-state="0" />
@@ -330,16 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatReadout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatFooter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -359,10 +350,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatWindow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="61" column="127" selection-start-line="61" selection-start-column="127" selection-end-line="61" selection-end-column="127" />
+        <state relative-caret-position="-644">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChatReadout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
