@@ -18,6 +18,32 @@ const DumpResponses = props => {
     )
 }
 
+const ChatTranscript = (responseData, questionData, questionNum) => {
+
+//    const {questionNum} = this.props
+
+    const getQuestionText = (idx) => {
+        const myQuestionJSON = this.props.questionData[idx]
+        const myQuestionText = (myQuestionJSON === undefined) ? 'Loading...' : "(" + myQuestionJSON.id + ") " + myQuestionJSON.question
+        return myQuestionText
+    }
+
+    const csrName = "Marianne"
+    const myQuestionText = getQuestionText(questionNum)
+
+    return (
+        <div className="chat-readout">
+            <div className="chat-scroll-readout">
+
+                <div className="chat-name-csr">{csrName}:</div>
+                <div className="chat-text">{myQuestionText}</div>
+                <div className="chat-text-spacer"></div>
+
+            </div>
+        </div>
+    )
+}
+
 class ChatReadout extends Component {
 
 /*
@@ -66,32 +92,9 @@ class ChatReadout extends Component {
         )
     }
 
-    chatTranscript = (responseData, questionData) => {
-
-        var questionNum = this.props.questionNum
-
-        const csrName = "Marianne"
-        const myQuestionText = this.getQuestionText(questionNum)
-
-        return (
-            <div className="chat-scroll-readout">
-
-                <div className="chat-name-csr">{csrName}:</div>
-                <div className="chat-text">{myQuestionText}</div>
-                <div className="chat-text-spacer"></div>
-
-            </div>
-        )
-    }
-
     render() {
 
-        const {questionNum} = this.props
-        const csrName = "Marianne"
-        const myQuestionText = this.getQuestionText(questionNum)
-
-
-        if (this.props.responseData.length > 0 && false)
+       if (this.props.responseData.length > 0 && false)
         {
             return (
                 <div className="chat-readout">
@@ -105,6 +108,10 @@ class ChatReadout extends Component {
 
 
             if (true) { // todo - This is a hard-code binary path - remove before prod release
+
+                const {questionNum} = this.props
+                const csrName = "Marianne"
+                const myQuestionText = this.getQuestionText(questionNum)
 
                 return (
                     <div className="chat-readout">
