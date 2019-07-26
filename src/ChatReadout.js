@@ -40,6 +40,10 @@ class ChatReadout extends Component {
     }
 */
 
+    componentDidMount() {
+      // todo - add code here to scroll div to the bottom
+    }
+
     getQuestionText = (idx) => {
         const myQuestionJSON = this.props.questionData[idx]
         const myQuestionText = (myQuestionJSON === undefined) ? 'Loading...' : myQuestionJSON.question + " (" + myQuestionJSON.id + ")"

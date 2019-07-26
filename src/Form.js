@@ -8,7 +8,8 @@ class Form extends Component {
         const promptText = 'Type here...'
 
         this.initialState = {
-            textIn: promptText
+            isActive: false,
+            textIn: promptText,
         }
         this.state = this.initialState
     }
@@ -22,11 +23,18 @@ class Form extends Component {
 
     handleClick = event => {
 
-        if (event.target.value === this.initialState.textIn) {
+//        if (event.target.value === this.initialState.textIn) {
 
-            this.setState({
-                textIn: ""
-            })
+        const prom = this.getPrompt()
+        const val  = event.target.value
+
+    //   alert(prom+","+val)
+    //    alert (prom === val)
+     //   alert(this.initialState.textIn)
+
+        if (prom === val) {
+
+            this.setState({ textIn: "", isActive: true })
         }
     }
 
@@ -39,9 +47,13 @@ class Form extends Component {
         }
     }
 
-    render(){
+    getPrompt = () => {
 
-    //    const { textIn } = this.state
+        const prompt = (this.state.isActive !== true ) ? ((this.props.isValid  === true) ? this.initialState.textIn : 'No soup for you!!!') : this.state.textIn
+        return prompt
+    }
+
+    render(){
 
         return(
             <form>
@@ -50,7 +62,7 @@ class Form extends Component {
                        type="text"
                        name="textIn"
                        autoComplete="off"
-                       value   = {this.state.textIn}
+                       value   = {this.getPrompt()}
                        onClick = {this.handleClick}
                        onChange= {this.handleChange}
                 />

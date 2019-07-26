@@ -10,7 +10,7 @@ class ChatFooter extends Component {
 
         return (
             <div className="chat-footer">
-                <Form handleSubmit={this.props.handleSubmit}/>
+                <Form handleSubmit={this.props.handleSubmit} isValid={this.props.isValid}/>
             </div>
         )
     }

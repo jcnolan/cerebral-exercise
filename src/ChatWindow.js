@@ -9,8 +9,11 @@ class ChatWindow extends Component {
 
     state = {
         responseData: [],
-        questionData: this.props.questionData,
-        questionNum: 1
+        questionNum:  1,
+        isValid:      true,
+        activeQuestion: null,
+        v: null,
+        t: '',
     }
 
 /*
@@ -20,13 +23,58 @@ class ChatWindow extends Component {
 */
     handleSubmit = textIn => {
 
-        var foo = this.state.responseData
-        foo[this.state.questionNum] = textIn
-        this.setState({responseData: foo})
+        const responseData = this.state.responseData
+        const questionNum  = this.state.questionNum
 
-//    this.setState({responseData: [...this.state.responseData, textIn]})
-//    this.state.responseData[this.state.questionNum] = textIn
-        this.setState({questionNum: this.state.questionNum+2})
+        var isValid = this.state.isValid
+
+        // Validate Here
+
+        const questionJSON = this.props.questionData[questionNum]
+        const validateData = questionJSON.validation
+
+        this.setState({activeQuestion:questionJSON})
+        this.setState({v:validateData}); // todo - remove 'v' from state
+
+        var typeType = ''
+
+        switch (typeof validateData) {
+            case 'string':
+                typeType = "string"; break;
+
+                case 'object':
+                typeType = "array";
+
+                isValid = validateData.includes(textIn)
+
+                break;
+
+            case 'boolean':
+                typeType = "bool"; break;
+            default:
+                typeType = "other";
+        }
+
+        this.setState({t:typeType}); // todo - remove 'v' from state
+
+        // On success save it
+
+        if (isValid === true) {
+
+            responseData[this.state.questionNum] = textIn
+            this.setState({responseData: responseData})
+
+            // todo - save to server side here
+
+            // Set new question number
+
+            this.setState({questionNum: this.state.questionNum + 1})
+
+        } else {
+
+            // alert("Doh!")
+        }
+        this.setState({isValid:isValid})
     }
 
     render() {
@@ -35,8 +83,13 @@ class ChatWindow extends Component {
 
             <div className="chat-window">
                 <ChatHeader />
-                <ChatReadout responseData={this.state.responseData} questionData={this.props.questionData} questionNum={this.state.questionNum}/>
-                <ChatFooter handleSubmit={this.handleSubmit} />
+                <ChatReadout responseData={this.state.responseData}
+                             questionData={this.props.questionData}
+                             questionNum={this.state.questionNum}
+                />
+                <ChatFooter handleSubmit={this.handleSubmit}
+                            isValid={this.state.isValid}
+                />
             </div>
         )
     }
