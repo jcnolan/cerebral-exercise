@@ -3,8 +3,6 @@ import './App.css';
 import './css/chatSample.css';
 import ChatWindow from './ChatWindow'
 
-import Api from './archive/Api'
-
 class App extends Component {
 
     state = {
