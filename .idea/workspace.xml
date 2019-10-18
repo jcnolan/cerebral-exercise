@@ -20,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -30,17 +30,19 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp7\www\cerebral\cerebral-exercise\build\static" />
+      <recent name="C:\wamp7\www\cerebral\cerebral-exercise\src\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp7\www\cerebral\cerebral-exercise\src" />
       <recent name="C:\wamp7\www\cerebral\cerebral-exercise\src\archive" />
       <recent name="C:\wamp7\www\cerebral\cerebral-exercise\src\images" />
       <recent name="C:\wamp7\www\cerebral\cerebral-exercise\src\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp7\www\cerebral\cerebral-exercise\src\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -71,6 +73,8 @@
       <workItem from="1564175092917" duration="4000" />
       <workItem from="1571161728969" duration="575000" />
       <workItem from="1571173754696" duration="153000" />
+      <workItem from="1571176537806" duration="255000" />
+      <workItem from="1571329376445" duration="23595000" />
     </task>
     <servers />
   </component>

@@ -28,15 +28,12 @@ class ChatWindow extends Component {
 
         this.setState({activeQuestion:questionJSON})
 
-        var typeType = ''
-
-        var nextQuestionNum = this.state.questionNum
+        let nextQuestionNum = this.state.questionNum;
 
         switch (typeof validateData) {
 
             case 'string':
 
-                typeType = "string";
                 // regex
 
                 isValid = textIn.match(validateData) !== null
@@ -49,7 +46,6 @@ class ChatWindow extends Component {
 
                 // array of string options
 
-                typeType = "array";
                 isValid = validateData.includes(textIn.toLowerCase())
 
                 if (isValid) {
@@ -62,13 +58,12 @@ class ChatWindow extends Component {
 
                 // true = valid, false = stop asking
 
-                typeType = "bool";
                 isValid = validateData
                 nextQuestionNum = isValid ? validatePaths : -1;
                 break;
 
             default:
-                typeType = "other";  // Should never happen!
+                break;  // Should never happen!
         }
 
         // On success save it
@@ -94,11 +89,16 @@ class ChatWindow extends Component {
 
             this.setState({questionNum: nextQuestionNum})
 
+            const questionJSON  = this.props.questionData[nextQuestionNum]
+            const validateData  = questionJSON.validation
+            if (typeof validateData === "boolean" && validateData === false) { isValid = false }
+
         } else {
 
             // alert("Doh!")
         }
         this.setState({isValid:isValid})
+        return [nextQuestionNum, isValid]
     }
 
     render() {
@@ -113,6 +113,9 @@ class ChatWindow extends Component {
                 />
                 <ChatFooter handleSubmit={this.handleSubmit}
                             isValid={this.state.isValid}
+                            questionData={this.props.questionData}
+                            questionNum={this.state.questionNum}
+
                 />
             </div>
         )

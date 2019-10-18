@@ -21,34 +21,19 @@ class ChatReadout extends Component {
 
             const chatTranscript = (responseData, questionData, questionNum) => {
 
-                const generateResponse = (csrName, myQuestionText) => {
-                    return(
-                        <div>
-                            <div className="chat-name-csr">{csrName}:</div>
-                            <div className="chat-text">{myQuestionText}</div>
-                            <div className="chat-text-spacer"></div>
-
-                            <div style={{ float:"left", clear: "both" }}
-                                 ref={(el) => { this.messagesEnd = el; }}>
-                            </div>
-                        </div>
-                    )
-                }
-
                  // For each response...
 
                     // Print associated question via CSR
                     // Print associated response from user
 
-                const rows = responseData.map((row, index) => {
+                const rows = responseData.map((myResponseText, index) => {
 
                     const csrName  = 'Marianne'
                     const userName = 'You'
                     const myQuestionText = this.getQuestionText(index)
-                    const myResponseText = row
 
                     return (
-                        <div>
+                        <div key={index}>
                             <div className="chat-name-csr">{csrName}:</div>
                             <div className="chat-text">{myQuestionText}</div>
                             <div className="chat-text-spacer" />
@@ -93,7 +78,7 @@ class ChatReadout extends Component {
                 </div>
             )
 
-        } else { // todo - Here we hit a test only stub / optional path
+        } else { // todo - Here we hit a test only stub / optional debugging path
             return (this.getReadoutStubText())
         }
     }
@@ -105,15 +90,15 @@ class ChatReadout extends Component {
 
                     <div className="chat-name-user">You:</div>
                     <div className="chat-text">Hi there my name is John</div>
-                    <div className="chat-text-spacer"></div>
+                    <div className="chat-text-spacer" />
 
                     <div className="chat-name-csr">Marianne:</div>
                     <div className="chat-text">Hi John, how can I help you?</div>
-                    <div className="chat-text-spacer"></div>
+                    <div className="chat-text-spacer" />
 
                     <div className="chat-name-user">You:</div>
                     <div className="chat-text">Well, I need some information</div>
-                    <div className="chat-text-spacer"></div>
+                    <div className="chat-text-spacer" />
 
                     <div style={{ float:"left", clear: "both" }}
                          ref={(el) => { this.messagesEnd = el; }}>
